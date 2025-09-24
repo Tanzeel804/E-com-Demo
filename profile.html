@@ -1,64 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Profile - Tanzeel</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <div class="brand-mark">Tz</div><div><strong>Tanzeel Store</strong></div>
-      </a>
-      <div class="ms-auto"><a href="index.html" class="btn btn-outline-primary">Back to Store</a></div>
-    </div>
-  </nav>
-
-  <main class="container py-5">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <!-- Replace with your profile picture -->
-          <img id="pfImg" src="assets/profile-placeholder.png" alt="profile" class="rounded-circle mb-3" style="width:140px;height:140px;object-fit:cover">
-          <h4 id="pfName">Tanzeel Ahmed</h4>
-          <p id="pfCity">City: —</p>
-          <p id="pfCountry">Country: —</p>
-          <button id="editBtn" class="btn btn-accent">Edit Profile</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profile - Tanzeel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="index.html"
+        >
+          <div class="brand-mark">Tz</div>
+          <div><strong>Tanzeel Store</strong></div>
+        </a>
+        <div class="ms-auto">
+          <a href="index.html" class="btn btn-outline-primary">Back to Store</a>
         </div>
       </div>
-      <div class="col-md-8">
-        <div class="card p-4">
-          <h5>About</h5>
-          <p id="pfObj">Frontend Developer passionate about modern interactive websites.</p>
-          <h6>Skills</h6>
-          <p id="pfSkills">HTML, CSS, JavaScript, Bootstrap</p>
-          <hr>
-          <button id="downloadCV" class="btn btn-outline-secondary">Download CV (HTML)</button>
+    </nav>
+
+    <main class="container py-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card p-4 text-center">
+            <!-- Replace with your profile picture -->
+            <img
+              id="pfImg"
+              src="assets/Gemini_Generated_Image_ojmfrzojmfrzojmf.png"
+              alt="profile"
+              class="rounded-circle mb-3"
+              style="width: 140px; height: 140px; object-fit: cover"
+            />
+            <h4 id="pfName">Tanzeel Ahmed</h4>
+            <p id="pfCity">City: _Lodhran</p>
+            <p id="pfCountry">Country: _Pakistan</p>
+            <button id="editBtn" class="btn btn-accent">Edit Profile</button>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card p-4">
+            <h5>About</h5>
+            <p id="pfObj">
+              Frontend Developer passionate about modern interactive websites.
+            </p>
+            <h6>Skills</h6>
+            <p id="pfSkills">HTML, CSS, JavaScript, Bootstrap</p>
+            <hr />
+            <button id="downloadCV" class="btn btn-outline-secondary">
+              Download CV (HTML)
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-
-  <script>
-    document.getElementById('editBtn').onclick = ()=>{
-      const name = prompt('Name:', document.getElementById('pfName').textContent) || 'Tanzeel Ahmed';
-      const city = prompt('City:', '') || '';
-      const country = prompt('Country:', '') || '';
-      document.getElementById('pfName').textContent = name;
-      document.getElementById('pfCity').textContent = 'City: ' + (city||'—');
-      document.getElementById('pfCountry').textContent = 'Country: ' + (country||'—');
-      localStorage.setItem('tz_profile', JSON.stringify({name,city,country}));
-    };
-    document.getElementById('downloadCV').onclick = ()=>{
-      const profile = JSON.parse(localStorage.getItem('tz_profile')||'{}');
-      const html = `<html><body><h1>${profile.name||'Tanzeel Ahmed'}</h1><p>${profile.city||''} ${profile.country||''}</p></body></html>`;
-      const blob = new Blob([html], {type:'text/html'}); const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href=url; a.download='cv.html'; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); },500);
-    };
-    // load profile
-    const p = JSON.parse(localStorage.getItem('tz_profile')||'null'); if(p){ document.getElementById('pfName').textContent = p.name||'Tanzeel Ahmed'; document.getElementById('pfCity').textContent='City: '+(p.city||'—'); document.getElementById('pfCountry').textContent='Country: '+(p.country||'—'); document.getElementById('pfObj').textContent = p.obj||document.getElementById('pfObj').textContent; document.getElementById('pfSkills').textContent = p.skills||document.getElementById('pfSkills').textContent; }
-  </script>
-</body>
+    </main>
+  </body>
 </html>
