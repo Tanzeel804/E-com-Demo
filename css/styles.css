@@ -1,0 +1,16 @@
+/* styles.css - basic professional styles */
+:root{
+  --accent1:#6b5bff;
+  --accent2:#ff6fb5;
+  --muted:#6c6c7a;
+}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fbfbff,#f3f1ff);color:#222;margin:0}
+.brand-mark{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--accent1),var(--accent2));font-weight:700}
+.hero{padding:48px 0;background:transparent}
+.hero .accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.section{padding:36px 0}
+.card-product{border-radius:12px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card-product:hover{transform:translateY(-8px);box-shadow:0 18px 50px rgba(38,26,90,0.06)}
+.product-img{height:220px;object-fit:cover;width:100%;background:#f6f6f8}
+.btn-accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;border:none}
+@media(max-width:768px){.product-img{height:160px}}
